@@ -22,10 +22,16 @@ On a terminal a window that lasts is green and one that runs out, or already did
 ## Install
 
 ```sh
-go install github.com/alessandrolattao/clessidra@latest
+curl -fsSL https://raw.githubusercontent.com/alessandrolattao/clessidra/main/install.sh | sh
 ```
 
-or download a Linux binary (amd64, arm64) from the [releases](https://github.com/alessandrolattao/clessidra/releases).
+It downloads the Linux binary (amd64, arm64) of the latest [release](https://github.com/alessandrolattao/clessidra/releases), checks it against `checksums.txt` and puts it in `~/.local/bin`. `INSTALL_DIR` picks another directory: `... | INSTALL_DIR=~/bin sh`.
+
+Or with Go:
+
+```sh
+go install github.com/alessandrolattao/clessidra@latest
+```
 
 Linux only: on macOS Claude Code keeps its login in the Keychain, which `clessidra` does not read.
 
